@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Clone Hero Clone 2</string>
+
+    <string-array name="masterOfPuppets">
+        <!--
+        left is gem type
+        0 - green
+        1- red
+        2 - yellow
+        right is position in list
+-->
+        <item>0-0</item>
+        <item>0-3</item>
+        <item>0-4</item>
+        <item>0-5</item>
+        <item>0-10</item>
+        <item>2-15</item>
+        <item>2-17</item>
+        <item>1-22</item>
+
+
+
+    </string-array>
+
+    <string-array name="masterOfPuppetsMED">
+        <!--
+        left is gem type
+        0 - green
+        1- red
+        2 - yellow
+        right is position in list
+-->
+        <item>0-0</item>
+        <item>0-3</item>
+        <item>0-4</item>
+        <item>0-5</item>
+        <item>0-10</item>
+        <item>2-15</item>
+        <item>2-17</item>
+        <item>2-19</item>
+        <item>1-22</item>
+
+
+
+    </string-array>
+
+    <string-array name="masterOfPuppetsHARD">
+        <!--
+        left is gem type
+        0 - green
+        1- red
+        2 - yellow
+        right is position in list
+-->
+        <item>0-0</item>
+        <item>0-3</item>
+        <item>0-4</item>
+        <item>0-5</item>
+        <item>0-10</item>
+        <item>2-15</item>
+        <item>2-17</item>
+        <item>2-19</item>
+        <item>1-22</item>
+        <item>1-25</item>
+        <item>1-27</item>
+
+
+
+    </string-array>
+
+    <string-array name="symphonyOfDestruction">
+        <item>1-0</item>
+        <item>2-2</item>
+        <item>0-0</item>
+        <item>1-5</item>
+        <item>0-8</item>
+    </string-array>
+</resources>
