@@ -84,6 +84,6 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(sharingIntent, "Share Via:"));
 
-        return false;
+        return true;
     }
 }
