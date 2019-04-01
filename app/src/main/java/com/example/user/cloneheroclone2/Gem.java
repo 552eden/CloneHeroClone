@@ -27,7 +27,7 @@ public class Gem {
     public Gem(String color, int x, int y, int h, Context context) {
         this.h = h;
         this.c = context;
-        fire =   Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.c.getResources(), R.drawable.fire), 250,
+        fire =   Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.c.getResources(), R.drawable.fire2), 250,
                 250, false);
 
         if (color.equals("green")) {
