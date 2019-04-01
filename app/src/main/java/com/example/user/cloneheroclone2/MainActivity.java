@@ -17,12 +17,21 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DbHelper scoreDataBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkAndRequestPermissions();
+        scoreDataBase = new DbHelper(this);
 
+
+    }
+
+    public void deleteAllScores(View v)
+    {
+        scoreDataBase.death();
     }
 
     String[] permissions = new String[]{

@@ -1,6 +1,7 @@
 package com.example.user.cloneheroclone2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -59,11 +60,15 @@ public class CHView extends SurfaceView implements Runnable
 
         isRunning = true;
 
-        currentSong = new Song(13, context, height, songName, this.dif);
+        currentSong = new Song(15, context, height, songName, this.dif);
         this.leftList = this.currentSong.getList();
         this.bmp = BitmapFactory.decodeResource(context.getResources(), R.drawable.almostfinalhighway);
 
         thread.start();
+
+
+
+
     }
     public void setIsRunning()
     {

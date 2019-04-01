@@ -118,4 +118,15 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PLAYER);
         onCreate(db);
     }
+
+    public void death()
+    {
+        database = getReadableDatabase();
+
+        database.execSQL("DROP TABLE IF EXISTS " + TABLE_PLAYER);
+
+        database.execSQL(CREATE_TABLE_PLAYER);
+
+
+    }
 }

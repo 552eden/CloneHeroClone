@@ -87,4 +87,3 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
         return false;
     }
 }
-

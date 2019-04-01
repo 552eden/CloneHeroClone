@@ -29,6 +29,7 @@ public class RealGameActivity extends AppCompatActivity  {
     private CallReciever reciever;
     private String score;
     private DbHelper scoreDataBase;
+    private Intent tt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +60,14 @@ public class RealGameActivity extends AppCompatActivity  {
         super.onWindowFocusChanged(hasFocus);
         if(!hasFocus)
             return;
-        Sounds.playSong(R.raw.masterofpuppets);
+        //Sounds.playSong(R.raw.masterofpuppets);
         int w = frm.getWidth();
         int h = frm.getHeight();
         chView = new CHView(this, w, h, this.songName, this.difficulty);
         frm.addView(chView);
+        tt = new Intent(this, MusicService.class);
+        tt.putExtra("songName", this.songName);
+        startService(tt);
 
 
     }
@@ -98,6 +102,7 @@ public class RealGameActivity extends AppCompatActivity  {
 
     public void goBack()
     {
+        stopService(tt);
         unregisterReceiver(reciever);
         Sscore = new Score(String.valueOf(chView.getScore()), this.songName, this.name, this.difficulty);
         scoreDataBase.createScore(Sscore);
