@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#941b8e"
     tools:context=".NameSetterActivity">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
+        android:background="@color/colorPrimaryDark"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -26,6 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="101dp"
+        android:background="#08ff00"
         android:text="Easy" />
 
     <Button
@@ -35,6 +38,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="177dp"
+        android:background="#ffee00"
         android:text="Medium" />
 
     <Button
@@ -44,6 +48,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="242dp"
+        android:background="#ff0000"
         android:text="Hard" />
 
 </RelativeLayout>

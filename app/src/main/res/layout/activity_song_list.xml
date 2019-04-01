@@ -4,23 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#941b8e"
     tools:context=".SongListActivity">
 
     <Button
         android:id="@+id/btn_Master"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="214dp"
+        android:layout_alignStart="@+id/btn_Symphony"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="239dp"
-        android:text="Master Of Puppets"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/metallica"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/btn_Symphony"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Symphony Of Destruction" />
+        android:layout_width="285dp"
+        android:layout_height="216dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/megadeth" />
 </RelativeLayout>
