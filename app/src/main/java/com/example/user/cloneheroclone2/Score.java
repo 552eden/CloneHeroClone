@@ -12,7 +12,6 @@ public class Score {
     public String score;
     public String songName;
     public String name;
-    public Bitmap songPic;
     public long id;
     public String dif;
 

@@ -15,12 +15,10 @@ public class CallReciever extends BroadcastReceiver
         String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
         if(state.equals(TelephonyManager.EXTRA_STATE_RINGING))
         {
-            while(TelephonyManager.EXTRA_INCOMING_NUMBER.isEmpty())
-            {
 
-            }
-            String phoneNum = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
-            Toast.makeText(context, "Number is: "+phoneNum, Toast.LENGTH_SHORT).show();
+            RealGameActivity.pause2();
+
+
         }
     }
 }

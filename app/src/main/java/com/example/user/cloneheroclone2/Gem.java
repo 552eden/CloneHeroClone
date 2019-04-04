@@ -21,7 +21,6 @@ public class Gem {
     private int velY;
     private Bitmap img;
     private Bitmap fire;
-    private String color;
     private Context c;
 
     public Gem(String color, int x, int y, int h, Context context) {

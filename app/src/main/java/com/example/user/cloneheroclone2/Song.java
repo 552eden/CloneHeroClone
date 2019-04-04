@@ -10,9 +10,6 @@ public class Song
 {
 
     private int songLength;
-    private Gem redGem;
-    private Gem greenGem;
-    private Gem yellowGem;
     private Gem tempGem;
     private ArrayList<Gem> list;
     private ArrayList<Gem> gemList;

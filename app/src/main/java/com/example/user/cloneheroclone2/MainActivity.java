@@ -31,7 +31,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void deleteAllScores(View v)
     {
-        scoreDataBase.death();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All Scores?");
+        builder.setMessage("Really delete all scores?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) { scoreDataBase.death();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "YAY ^_^", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
+
     }
 
     String[] permissions = new String[]{

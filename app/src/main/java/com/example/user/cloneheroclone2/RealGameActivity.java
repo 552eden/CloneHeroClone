@@ -1,23 +1,21 @@
 package com.example.user.cloneheroclone2;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Messenger;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class RealGameActivity extends AppCompatActivity  {
 
+    private static int musicStopper;
     FrameLayout frm;
-    CHView chView;
+    static CHView chView;
     TextView TVT;
     TextView TVS;
     Thread thread;
@@ -25,11 +23,9 @@ public class RealGameActivity extends AppCompatActivity  {
     private Score Sscore;
     private String difficulty;
     private String songName;
-    private Song song;
     private CallReciever reciever;
-    private String score;
     private DbHelper scoreDataBase;
-    private Intent tt;
+    private Intent music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +44,7 @@ public class RealGameActivity extends AppCompatActivity  {
         reciever = new CallReciever();
         registerReceiver(reciever, new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED));
         scoreDataBase = new DbHelper(this);
-
+        musicStopper = 0;
 
     }
 
@@ -65,9 +61,9 @@ public class RealGameActivity extends AppCompatActivity  {
         int h = frm.getHeight();
         chView = new CHView(this, w, h, this.songName, this.difficulty);
         frm.addView(chView);
-        tt = new Intent(this, MusicService.class);
-        tt.putExtra("songName", this.songName);
-        startService(tt);
+        music = new Intent(this, MusicService.class);
+        music.putExtra("songName", this.songName);
+        startService(music);
 
 
     }
@@ -90,6 +86,10 @@ public class RealGameActivity extends AppCompatActivity  {
         @Override
         public void handleMessage(Message msg)
         {
+            if(musicStopper == 1)
+            {
+                stopService(music);
+            }
             int t = msg.arg1;
             TVT.setText(String.format("%02d", t/60)+":" + String.format("%02d", t%60) );
             if (t%60 == chView.getSongLength())
@@ -102,7 +102,7 @@ public class RealGameActivity extends AppCompatActivity  {
 
     public void goBack()
     {
-        stopService(tt);
+        stopService(music);
         unregisterReceiver(reciever);
         Sscore = new Score(String.valueOf(chView.getScore()), this.songName, this.name, this.difficulty);
         scoreDataBase.createScore(Sscore);
@@ -118,19 +118,35 @@ public class RealGameActivity extends AppCompatActivity  {
     {
         if(chView.getIsRunning())
         {
+            musicStopper = 1;
             chView.pause();
         }
         else
         {
+            musicStopper = 0;
             chView.unPause();
         }
     }
 
+    public static void pause2()
+    {
+        if(chView.getIsRunning())
+        {
+            musicStopper = 1;
+            chView.pause();
+        }
+        else
+        {
+            musicStopper = 0;
 
+            chView.unPause();
+        }
+    }
 
-
-
-
+    private void stopMusic()
+    {
+        stopService(music);
+    }
 
 
     private int count = 0;
@@ -148,6 +164,7 @@ public class RealGameActivity extends AppCompatActivity  {
                         e.printStackTrace();
                     }
                 }
+
                 Message myMsg = handler.obtainMessage();
                 myMsg.arg1 = count;
                 handler.sendMessage(myMsg);
