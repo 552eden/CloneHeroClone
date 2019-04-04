@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void screenChanger4(View v)
+    {
+        Intent intent = new Intent(this,CreditsActivity.class);
+        startActivity(intent);
+    }
+
     public void startGame(View v)
     {
         Intent intent = new Intent(this, SongListActivity.class);

@@ -86,6 +86,16 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="125dp"
         android:layout_marginTop="592dp"
+        android:onClick="screenChanger3"
         android:text="how to play" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="109dp"
+        android:text="Credits" />
 
 </RelativeLayout>

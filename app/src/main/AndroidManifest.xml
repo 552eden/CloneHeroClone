@@ -36,7 +36,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".HowToPlayActivity"></activity>
+        <activity android:name=".HowToPlayActivity" />
+        <activity android:name=".CreditsActivity"></activity>
     </application>
 
 </manifest>
