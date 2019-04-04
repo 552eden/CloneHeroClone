@@ -27,6 +27,9 @@ public class RealGameActivity extends AppCompatActivity  {
     private DbHelper scoreDataBase;
     private Intent music;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +91,7 @@ public class RealGameActivity extends AppCompatActivity  {
         {
             if(musicStopper == 1)
             {
-                stopService(music);
+                stopMusic();
             }
             int t = msg.arg1;
             TVT.setText(String.format("%02d", t/60)+":" + String.format("%02d", t%60) );

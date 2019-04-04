@@ -3,6 +3,7 @@ package com.example.user.cloneheroclone2;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.content.Intent;
@@ -11,9 +12,16 @@ public class MusicService extends Service {
 
     String songName;
     MediaPlayer player;
+
+
+
     @Nullable
     @Override
-    public IBinder onBind(Intent intent) { return null; }
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+
 
     @Override
     public void onCreate()
@@ -44,6 +52,19 @@ public class MusicService extends Service {
     public void onDestroy()
     {
         player.stop();
+    }
+
+
+
+    @Override
+    public boolean stopService(Intent name) {
+        player.pause();
+        return super.stopService(name);
+    }
+
+    public void ppaauussee()
+    {
+        player.pause();
     }
 
 
