@@ -5,7 +5,7 @@
     android:id="@+id/scoreLayout"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="#38a7da">
+    android:background="#c447bd">
 
     <ImageView
         android:id="@+id/songImage"

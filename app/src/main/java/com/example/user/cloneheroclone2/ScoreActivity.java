@@ -50,13 +50,16 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
         Score score = scoreList.get(position);
-        scoreDataBase.deleteScoreByRow(score.id);
-        scoreList = scoreDataBase.getAllScores();
-        scoreAdapter = new ScoreAdapter(this, scoreList);
-        ScoreslistView.setAdapter(scoreAdapter);
-        ScoreslistView.setOnItemClickListener(this);
-        scoreAdapter.notifyDataSetChanged();
+
+        String shareBody = "My score on 'Clone Hero Clone' on the song: '" + score.getSongName() + "'\n On difficulty: " + score.getDif() + "\n Is: " + score.getScore();
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Look at my 'Clone Hero Clone' score!");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share Via:"));
+
 
     }
 
@@ -76,14 +79,12 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
         //startActivity(Intent.createChooser(emailIntent, "Brag!"));
 
         Score score = scoreList.get(position);
-
-        String shareBody = "My score on 'Clone Hero Clone' on the song: '" + score.getSongName() + "'\n On difficulty: " + score.getDif() + "\n Is: " + score.getScore();
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/plain");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Look at my 'Clone Hero Clone' score!");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        startActivity(Intent.createChooser(sharingIntent, "Share Via:"));
-
+        scoreDataBase.deleteScoreByRow(score.id);
+        scoreList = scoreDataBase.getAllScores();
+        scoreAdapter = new ScoreAdapter(this, scoreList);
+        ScoreslistView.setAdapter(scoreAdapter);
+        ScoreslistView.setOnItemClickListener(this);
+        scoreAdapter.notifyDataSetChanged();
         return true;
     }
 }

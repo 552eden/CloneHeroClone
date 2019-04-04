@@ -62,11 +62,6 @@ public class MusicService extends Service {
         return super.stopService(name);
     }
 
-    public void ppaauussee()
-    {
-        player.pause();
-    }
-
 
     public MusicService() {
     }
