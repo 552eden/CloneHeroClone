@@ -8,17 +8,6 @@
     tools:context=".CreditsActivity">
 
     <TextView
-        android:id="@+id/  aaaaasdasdasd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textSize="36sp"
-        tools:text="Made By:" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,4 +36,14 @@
         android:layout_marginBottom="311dp"
         android:text="Hagit Cohen"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="Made By:"
+        android:textSize="36sp" />
 </RelativeLayout>
