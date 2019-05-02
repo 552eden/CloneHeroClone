@@ -42,9 +42,7 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     protected void onDestroy() {
-        Intent i = new Intent(this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
+        
         super.onDestroy();
     }
 
