@@ -46,7 +46,18 @@ public class Song
         }
         else if(song.equals("Symphony Of Destruction - Megadeth"))
         {
-            listS = context.getResources().getStringArray(R.array.symphonyOfDestruction);
+            if(difficulty.equals("med"))
+            {
+                listS = context.getResources().getStringArray(R.array.symphonyOfDestructionMed);
+            }
+            else if(difficulty.equals("hard"))
+            {
+                listS = context.getResources().getStringArray(R.array.symphonyOfDestructionHard);
+            }
+            else
+            {
+                listS = context.getResources().getStringArray(R.array.symphonyOfDestruction);
+            }
         }
         String[] arr;
         int x;

@@ -31,8 +31,6 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_score);
         scoreList = new ArrayList<>();
         scoreDataBase = new DbHelper(this);
-        scoreDataBase.createScore(new Score("695", "Master Of Puppets - Metallica", "Eden", "Hard"));
-        scoreDataBase.createScore(new Score("420", "Symphony Of Destruction - Megadeth", "Beni", "Easy"));
         scoreList = scoreDataBase.getAllScores();
         ScoreslistView = (ListView) findViewById(R.id.lvplayer);
         scoreAdapter = new ScoreAdapter(this, scoreList);

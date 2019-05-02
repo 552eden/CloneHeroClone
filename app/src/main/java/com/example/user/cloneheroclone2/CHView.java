@@ -60,7 +60,7 @@ public class CHView extends SurfaceView implements Runnable
 
         isRunning = true;
 
-        currentSong = new Song(20, context, height, songName, this.dif);
+        currentSong = new Song(30, context, height, songName, this.dif);
         this.leftList = this.currentSong.getList();
         this.bmp = BitmapFactory.decodeResource(context.getResources(), R.drawable.almostfinalhighway);
 
