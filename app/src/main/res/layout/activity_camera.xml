@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#941b8e"
     tools:context=".CameraActivity">
 
     <ImageView
@@ -43,5 +44,5 @@
         android:layout_alignBottom="@+id/shutter"
         android:layout_alignParentEnd="true"
         android:onClick="testClicker"
-        android:text="Test" />
+        android:text="Restore Image" />
 </RelativeLayout>

@@ -1,7 +1,9 @@
 package com.example.user.cloneheroclone2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,12 +74,41 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
 
 
     @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+    public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
        /* Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + "552eden@gmail.com"));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Look at my score!");*/
         //emailIntent.putExtra(Intent.EXTRA_TEXT, "My score is: " + score.getScore());
         //startActivity(Intent.createChooser(emailIntent, "Brag!"));
 
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Really Delete?");
+        builder.setMessage("Are you sure you want to delete this score?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                delScore(position, id);
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
+
+
+        return true;
+    }
+
+    public void delScore(int position, long id)
+    {
         Score score = scoreList.get(position);
         scoreDataBase.deleteScoreByRow(score.id);
         scoreList = scoreDataBase.getAllScores();
@@ -85,6 +116,5 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
         ScoreslistView.setAdapter(scoreAdapter);
         ScoreslistView.setOnItemClickListener(this);
         scoreAdapter.notifyDataSetChanged();
-        return true;
     }
 }

@@ -29,6 +29,8 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         Sounds.setSound(this);
+        ImageView cameraImageView = (ImageView) findViewById(R.id.cameraShower);
+        cameraImageView.setImageBitmap(loadImageBitmap("pic.png"));
     }
 
     public void takeImage(View v) {
@@ -49,8 +51,7 @@ public class CameraActivity extends AppCompatActivity {
         if (requestCode == SELECT_PHOTO && resultCode == RESULT_OK) {
             Uri Seleced_Image_Uri = Data.getData();
             cameraImageView.setImageURI(Seleced_Image_Uri);
-            Sounds.playLoseSound();
-            Sounds.playLoseSound();
+
         }
     }
 
@@ -110,29 +111,10 @@ public class CameraActivity extends AppCompatActivity {
 
     public void testClicker(View v)
     {
-        Toast.makeText(this, "aaaa", Toast.LENGTH_SHORT).show();
         ImageView cameraImageView = (ImageView) findViewById(R.id.cameraShower);
         cameraImageView.setImageBitmap(loadImageBitmap("pic.png"));
     }
 
-  /*  private  void publicAddPic(Bitmap imageBitmap)
-    {
-        FileOutputStream fos = null;
-        try {
-            fos = openFileOutput("pic.png", Context.MODE_WORLD_READABLE);
-            imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-            fos.flush();
-            fos.close();
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }*/
 
 }
 

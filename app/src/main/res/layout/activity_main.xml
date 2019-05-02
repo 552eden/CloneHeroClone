@@ -89,12 +89,11 @@
         android:text="Credits" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button9"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="146dp"
+        android:layout_alignTop="@+id/button10"
+        android:layout_centerHorizontal="true"
         android:onClick="screenChanger3"
         android:text="how to play" />
 
