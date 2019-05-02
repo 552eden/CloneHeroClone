@@ -84,11 +84,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void death(View v)
-    {
-        finish();
-    }
-
     public void screenChanger2(View v)
     {
         Intent intent = new Intent(this,CameraActivity.class);
