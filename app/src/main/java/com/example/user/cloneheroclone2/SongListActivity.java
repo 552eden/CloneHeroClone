@@ -43,10 +43,5 @@ public class SongListActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-   /* public void nextScreen(View v)
-    {
-        Intent i = new Intent(this, NameSetterActivity.class);
-        i.putExtra("SongName", );
-        startActivity(i);
-    } */
+
 }

@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        Sounds.setSound(this);
+        //Sounds.setSound(this);
         ImageView cameraImageView = (ImageView) findViewById(R.id.cameraShower);
         cameraImageView.setImageBitmap(loadImageBitmap("pic.png"));
     }
@@ -45,7 +46,7 @@ public class CameraActivity extends AppCompatActivity {
             Bitmap imageBitmap = (Bitmap) Data.getExtras().get("data");
             cameraImageView.setImageBitmap(imageBitmap);
             privateAddPic(imageBitmap);
-            Sounds.playSong(R.raw.masterofpuppets);
+            //Sounds.playSong(R.raw.win);
            // publicAddPic(imageBitmap);
         }
         if (requestCode == SELECT_PHOTO && resultCode == RESULT_OK) {
@@ -62,18 +63,9 @@ public class CameraActivity extends AppCompatActivity {
         startActivityForResult(photoPickerIntent, SELECT_PHOTO);
     }
 
- /* public void galleryAddPic()
-  {
-      String timeStamp = new SimpleDateFormat("yyyyMMdd").format(new Date());
-      try{
-          MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "example", timeStamp);
-      } catch (Exception e)
-      {
-          Log.d("TAG", "gallaryAddPic: " + e.toString());
-      }
-  }*/
 
-    private  void privateAddPic(Bitmap imageBitmap)
+
+    private void privateAddPic(@NonNull Bitmap imageBitmap)
     {
         FileOutputStream fos = null;
         try {
@@ -109,7 +101,7 @@ public class CameraActivity extends AppCompatActivity {
         return bitmap;
     }
 
-    public void testClicker(View v)
+    public void RestoreImage(View v)
     {
         ImageView cameraImageView = (ImageView) findViewById(R.id.cameraShower);
         cameraImageView.setImageBitmap(loadImageBitmap("pic.png"));

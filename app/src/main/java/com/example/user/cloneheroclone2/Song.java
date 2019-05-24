@@ -10,24 +10,12 @@ public class Song
 {
 
     private int songLength;
-    private Gem tempGem;
     private ArrayList<Gem> list;
-    private ArrayList<Gem> gemList;
-    private int counter;
-    private  Context context;
     private String[] listS;
-    private String song;
-    private String difficulty;
-
 
     public Song(int songLength, Context context, int h, String song, String difficulty) {
         this.songLength = songLength;
-        this.context = context;
-        this.song = song;
-        this.difficulty = difficulty;
-        this.gemList = new ArrayList<Gem>();
         this.list = new ArrayList<Gem>();
-        //listS = context.getResources().getStringArray(R.array.masterOfPuppets);
         if(song.equals("Master Of Puppets - Metallica"))
         {
             if(difficulty.equals("med"))
@@ -78,21 +66,6 @@ public class Song
 
     }
 
-   /* public void createLeftList()
-    {
-        //temp
-        for (int i = 0; i<9999999; i++)
-        {
-            gemList.add(greenGem);
-        }
-
-    }*/
-
-    public ArrayList<Gem> getGemList()
-    {
-        return this.gemList;
-    }
-
 
     public ArrayList<Gem> getList()
     {
@@ -102,13 +75,6 @@ public class Song
     public int getSongLength()
     {
         return this.songLength;
-    }
-
-    public synchronized void draw(Canvas canvas, Paint paint)
-    {
-        counter++;
-        this.tempGem = this.gemList.get(counter);
-        canvas.drawBitmap(this.tempGem.getColor(), 10, 2, paint);
     }
 
 }

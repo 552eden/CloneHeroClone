@@ -42,7 +42,7 @@ public class ScoreActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     protected void onDestroy() {
-        
+
         super.onDestroy();
     }
 

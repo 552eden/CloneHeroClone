@@ -1,7 +1,6 @@
 package com.example.user.cloneheroclone2;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -10,30 +9,22 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class CHView extends SurfaceView implements Runnable
 {
-    private int screenWidth;
     private int screenHeight;
-    private Context context;
     private SurfaceHolder myHolder;
     private Paint paint;
     private Thread thread;
     private Canvas canvas;
     private boolean isRunning;
-    private int interval = 0;
     private Song currentSong;
     private int counter;
-    private ArrayList<Gem> leftList;
-    private ArrayList<Gem> midList;
-    private ArrayList<Gem> rightList;
     private Gem tmpGem;
     float x;
     float y;
-    private Bitmap bg;
     private boolean touch = false;
     float diffX;
     float diffY;
@@ -44,13 +35,11 @@ public class CHView extends SurfaceView implements Runnable
     private int multiplier;
     private String dif;
 
-    public CHView(Context context, int width, int height, String songName, String dif)
+    public CHView(Context context, int height, String songName, String dif)
     {
         super(context);
         this.c = context;
         this.screenHeight = height;
-        this.screenWidth = width;
-        this.context = context;
         myHolder = getHolder();
         paint = new Paint();
         thread = new Thread(this);
@@ -61,7 +50,7 @@ public class CHView extends SurfaceView implements Runnable
         isRunning = true;
 
         currentSong = new Song(30, context, height, songName, this.dif);
-        this.leftList = this.currentSong.getList();
+
         this.bmp = BitmapFactory.decodeResource(context.getResources(), R.drawable.almostfinalhighway);
 
         thread.start();

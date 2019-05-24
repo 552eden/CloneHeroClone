@@ -1,10 +1,13 @@
 package com.example.user.cloneheroclone2;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -47,8 +50,10 @@ public class NameSetterActivity extends AppCompatActivity implements View.OnClic
                 i.putExtra("SongName", songName);
                 i.putExtra("Difficulty", "easy");
                 i.putExtra("FirstName", firstName);
-                if(!nameET.getText().toString().isEmpty())
+                if(!nameET.getText().toString().isEmpty()) {
+                    hideKeyboardFrom(this, v);
                     startActivity(i);
+                }
                 else
                     Toast.makeText(this, "Input Name!", Toast.LENGTH_SHORT).show();
                 break;
@@ -57,8 +62,10 @@ public class NameSetterActivity extends AppCompatActivity implements View.OnClic
                 j.putExtra("SongName", songName);
                 j.putExtra("Difficulty", "med");
                 j.putExtra("FirstName", firstName);
-                if(!nameET.getText().toString().isEmpty())
+                if(!nameET.getText().toString().isEmpty()) {
+                    hideKeyboardFrom(this, v);
                     startActivity(j);
+                }
                 else
                     Toast.makeText(this, "Input Name!", Toast.LENGTH_SHORT).show();
                 break;
@@ -67,8 +74,10 @@ public class NameSetterActivity extends AppCompatActivity implements View.OnClic
                 f.putExtra("SongName", songName);
                 f.putExtra("Difficulty", "hard");
                 f.putExtra("FirstName", firstName);
-                if(!nameET.getText().toString().isEmpty())
+                if(!nameET.getText().toString().isEmpty()) {
+                    hideKeyboardFrom(this, v);
                     startActivity(f);
+                }
                 else
                     Toast.makeText(this, "Input Name!", Toast.LENGTH_SHORT).show();
                 break;
@@ -76,6 +85,10 @@ public class NameSetterActivity extends AppCompatActivity implements View.OnClic
 
 
         }
+    }
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
 

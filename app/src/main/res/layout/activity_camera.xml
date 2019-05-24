@@ -43,6 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/shutter"
         android:layout_alignParentEnd="true"
-        android:onClick="testClicker"
+        android:onClick="RestoreImage"
         android:text="Restore Image" />
 </RelativeLayout>

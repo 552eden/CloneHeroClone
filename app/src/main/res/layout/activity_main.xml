@@ -29,7 +29,7 @@
         android:layout_marginTop="171dp"
         android:layout_marginEnd="1dp"
         android:background="@drawable/fire"
-        android:onClick="startGame"
+        android:onClick="songScreenChanger"
         android:text="Start Game" />
 
     <Button
@@ -40,7 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="256dp"
         android:background="@drawable/trophy"
-        android:onClick="screenChanger"
+        android:onClick="scoreScreenChanger"
         android:text="High Scores" />
 
     <Button
@@ -52,7 +52,7 @@
         android:layout_marginTop="155dp"
         android:layout_marginEnd="-91dp"
         android:layout_marginBottom="20dp"
-        android:onClick="screenChanger2"
+        android:onClick="cameraScreenChanger2"
         android:text="selfie mode" />
 
     <Button
@@ -85,7 +85,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="109dp"
-        android:onClick="screenChanger4"
+        android:onClick="creditScreenChanger4"
         android:text="Credits" />
 
     <Button
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button10"
         android:layout_centerHorizontal="true"
-        android:onClick="screenChanger3"
+        android:onClick="instructionScreenChanger3"
         android:text="how to play" />
 
 </RelativeLayout>

@@ -43,7 +43,7 @@ public class RealGameActivity extends AppCompatActivity  {
         this.songName = intent.getExtras().getString("SongName");
         thread = new Thread(runnable);
         thread.start();
-        Sounds.setSound(this);
+        //Sounds.setSound(this);
         reciever = new CallReciever();
         registerReceiver(reciever, new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED));
         scoreDataBase = new DbHelper(this);
@@ -59,10 +59,10 @@ public class RealGameActivity extends AppCompatActivity  {
         super.onWindowFocusChanged(hasFocus);
         if(!hasFocus)
             return;
-        //Sounds.playSong(R.raw.masterofpuppets);
+
         int w = frm.getWidth();
         int h = frm.getHeight();
-        chView = new CHView(this, w, h, this.songName, this.difficulty);
+        chView = new CHView(this, h, this.songName, this.difficulty);
         frm.addView(chView);
         music = new Intent(this, MusicService.class);
         music.putExtra("songName", this.songName);
@@ -80,7 +80,6 @@ public class RealGameActivity extends AppCompatActivity  {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
     }
 

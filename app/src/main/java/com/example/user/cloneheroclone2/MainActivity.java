@@ -78,31 +78,31 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void screenChanger(View v)
+    public void scoreScreenChanger(View v)
     {
         Intent intent = new Intent(this,ScoreActivity.class);
         startActivity(intent);
     }
 
-    public void screenChanger2(View v)
+    public void cameraScreenChanger2(View v)
     {
         Intent intent = new Intent(this,CameraActivity.class);
         startActivity(intent);
     }
 
-    public void screenChanger3(View v)
+    public void instructionScreenChanger3(View v)
     {
         Intent intent = new Intent(this,HowToPlayActivity.class);
         startActivity(intent);
     }
 
-    public void screenChanger4(View v)
+    public void creditScreenChanger4(View v)
     {
         Intent intent = new Intent(this,CreditsActivity.class);
         startActivity(intent);
     }
 
-    public void startGame(View v)
+    public void songScreenChanger(View v)
     {
         Intent intent = new Intent(this, SongListActivity.class);
         startActivity(intent);

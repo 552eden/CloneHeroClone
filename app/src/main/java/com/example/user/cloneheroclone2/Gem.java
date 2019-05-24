@@ -18,7 +18,6 @@ public class Gem {
     private int x;
     private int y;
     private int h;
-    private int velY;
     private Bitmap img;
     private Bitmap fire;
     private Context c;
@@ -70,17 +69,12 @@ public class Gem {
         return this.y;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
 
-    public void setY(int y) {
-        this.y = y;
-    }
 
     public void move(int i) {
-        //dictates how fast it moves
+
         if(i==1) {
+            //The + X dictates how fast it moves
             this.y = (y + 15);
             explode();
         }
