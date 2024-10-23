@@ -22,24 +22,32 @@ public class Gem {
     private Bitmap fire;
     private Context c;
 
+
     public Gem(String color, int x, int y, int h, Context context) {
         this.h = h;
         this.c = context;
+        int width= context.getResources().getDisplayMetrics().widthPixels;
+        //width = width - 20;
+        int height= context.getResources().getDisplayMetrics().heightPixels;
         fire =   Bitmap.createScaledBitmap(BitmapFactory.decodeResource(this.c.getResources(), R.drawable.fire2), 250,
                 250, false);
 
         if (color.equals("green")) {
             this.img = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.green), 250,
                     250, false);
+            this.x = (width/5) ;
 
         } else if (color.equals("red")) {
             this.img = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.red), 250,
                     250, false);
+            this.x = (width / 5) * 2 ;
         } else if (color.equals("yellow")) {
             this.img = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.yellow), 250,
                     250, false);
+            this.x = (width / 6) * 4;
         }
-        this.x = x;
+
+        //this.x = x;
         this.y = y;
 
     }

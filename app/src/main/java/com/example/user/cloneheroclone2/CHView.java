@@ -163,7 +163,7 @@ public class CHView extends SurfaceView implements Runnable
 
        if( (-180< diffX && diffX<180) &&( diffY < 180 && diffY > -180))
        {
-           if (this.y > (screenHeight - 300) && this.y < (screenHeight - 100))
+           if (this.y > (screenHeight - 800) && this.y < (screenHeight - 50))
            {
                this.streak++;
                if (this.streak<2)

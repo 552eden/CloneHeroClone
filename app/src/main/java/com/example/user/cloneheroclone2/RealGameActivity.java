@@ -116,6 +116,11 @@ public class RealGameActivity extends AppCompatActivity  {
         startActivity(i);
     }
 
+    public void goBackBtn(View v)
+    {
+        goBack();
+    }
+
     public void pause(View v)
     {
         if(chView.getIsRunning())
